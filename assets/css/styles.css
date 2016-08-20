@@ -1,0 +1,34 @@
+#Header{
+  background-color:blue;
+  color:white;
+  margin-bottom:0;
+}
+
+#GameContainer{
+  height:521px;
+  width:100%;
+  background-color:grey;
+  padding:4em 2em 1em 2em;
+}
+
+td{
+  width:8em;
+  height:8em;
+  text-align:center;
+  vertical-align:middle;
+}
+
+td[data-position="1"], td[data-position="7"]{
+  border-left:2px solid black;
+  border-right:2px solid black;
+}
+
+td[data-position="3"], td[data-position="5"]{
+  border-top:2px solid black;
+  border-bottom:2px solid black;
+}
+
+td[data-position="4"]{
+  border:2px solid black;
+}
+
