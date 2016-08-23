@@ -57,7 +57,7 @@ var Board =
     text: '',
     value: 256,
   },
-]
+];
 
 // My Constructor
 // this.game will point to our array of objects Board.
@@ -80,27 +80,31 @@ TicTacToe.prototype.buildBoard = function()
 {
   for(var i = 0; i <= 8; i++)  // iterate through all objects stored in Board[ ] and set squares to empty
   {
-    $('.cell[data-position="' + i + '"]').text(this.board[i].text);
+    $('.cell[data-position="' + i + '"]').text(this.board[i].text).click(function()
+    {
+      myGame.nextMove(this);
+    });
   }
+
 };
 
 TicTacToe.prototype.nextMove = function(square)
 {
   square=$(square);                                 // Take the html element 'square' & make it a jQuery element.
-  if (square.text() == "")                          // if 'square' is empty....
+  if (square.text() === "")                          // if 'square' is empty....
   {
     var position = square.attr('data-position');    // Variable stores what data-position has been selected.
     var value = this.board[position].value;         // Variable accesses Board[index] --> index.value: key (i.e. Board[0].value:1)
     //even - playerOne
-    if(this.turn % 2 == 0)
+    if(this.turn % 2 === 0)
     {
-      this.rounds['X'].push(value);                 // .push( ) store whatever the value of this square's this.board[position].value is to the corresponding array.
+      this.rounds.X.push(value);                 // .push( ) store whatever the value of this square's this.board[position].value is to the corresponding array.
       square.text("X");                             // Mark the square with 'X' (do this as text so the initial if statement will catch it as not empty; user will not be able to use that square then.)
     }
     else
     {
       //odd - playerTwo
-      this.rounds['O'].push(value);                 // .push( ) store whatever the value of this square's this.board[position].value is to the corresponding array.
+      this.rounds.O.push(value);                 // .push( ) store whatever the value of this square's this.board[position].value is to the corresponding array.
       square.text("O");                             // Mark the square with 'O' (do this as text so the initial if statement will catch it as not empty; user will not be able to use that square then.)
     }
     this.checkForWinner();
@@ -115,7 +119,7 @@ TicTacToe.prototype.nextMove = function(square)
 TicTacToe.prototype.checkForWinner = function()
 {
   var symbol;                                       // Variable will store what symbol is being analyzed.
-  if(this.turn % 2 == 0) symbol = 'X';
+  if(this.turn % 2 === 0) symbol = 'X';
   else symbol ='O';
 
   var sum = this.rounds[symbol].reduce(             // this.rounds[symbol] represents either X: [selections] or O: [selections].
@@ -129,7 +133,7 @@ TicTacToe.prototype.checkForWinner = function()
   if (arrayWinners.includes(sum))                   // .includes( ) will scan array indexes for an index that is === sum.
   {
       console.log("you are the winner");
-      alert('You are the winner!')
+      alert('You are the winner!');
       this.newGame();
       return true;
   }

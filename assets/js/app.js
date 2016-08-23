@@ -24,7 +24,7 @@
 /* ---------- Objects ---------- */
 // ################################
 
-var myGame = new TicTacToe('Mario',"Todd",Board);
+
 
 // ########################################
 /* ---------- Parent Function ---------- */
@@ -38,9 +38,11 @@ $(document).ready(initLoad);
 
 function initLoad()
 {
-  myGame.buildBoard();
-  
-};
+  console.log('page load');
+  loadBoard();
+  console.log('board ready');
+  startGame();
+}
 
 // ###########################################
 /* ---------- loadBoard Function ---------- */
@@ -52,7 +54,7 @@ function loadBoard()
   {
     emptyBoard(i);
   }
-};
+}
 
 // ############################################
 /* ---------- emptyBoard Function ---------- */
@@ -61,7 +63,7 @@ function loadBoard()
 function emptyBoard(number)
 {
   $('#s' + number).text('');
-};
+}
 
 // ###########################################
 /* ---------- startGame Function ---------- */
@@ -69,7 +71,8 @@ function emptyBoard(number)
 
 function startGame()
 {
-
+  console.log('in start game');
+  nextMove();
 }
 
 // ###############################################
@@ -79,7 +82,7 @@ function startGame()
 function checkWhosTurn()
 {
 
-};
+}
 
 // ############################################
 /* ---------- switchTurn Function ---------- */
@@ -88,7 +91,7 @@ function checkWhosTurn()
 function switchTurn()
 {
 
-};
+}
 
 // ################################################
 /* ---------- checkForWinner Function ---------- */
@@ -97,7 +100,7 @@ function switchTurn()
 function checkForWinner()
 {
 
-};
+}
 
 // ################################################
 /* ---------- nextMove Function ---------- */
@@ -105,8 +108,16 @@ function checkForWinner()
 
 function nextMove(square)
 {
-
-};
+  console.log('in next move');
+  square=$('.cell');                                 // Take the html element 'square' & make it a jQuery element.
+  console.log('square defined');
+  square.click(function()
+  {
+    console.log('in click event');
+    var position = square.attr('data-position');    // Variable stores what data-position has been selected.
+    console.log('position defined');
+  });
+}
 
 // ##########################################
 /* ---------- checkRow Function ---------- */
@@ -115,7 +126,7 @@ function nextMove(square)
 function checkRow(a, b, c, move)
 {
 
-};
+}
 
 // ########################################
 /* ---------- getBox Function ---------- */
@@ -124,4 +135,4 @@ function checkRow(a, b, c, move)
 function getBox(number)
 {
 
-};
+}
