@@ -117,7 +117,10 @@ TicTacToe.prototype.buildBoard = function()
     // .text is a key-value pair in each object stored in Board[ ].
     // So iterate to each .cell[data-position] & change it's text value to that
     // of the object
-    $('.cell[data-position="' + i + '"]').text(this.board[i].text);
+    $('.cell[data-position="' + i + '"]').text(this.board[i].text).click(function()
+    {
+      myGame.nextMove($(this));
+    });
   }
 };
 
@@ -125,10 +128,10 @@ TicTacToe.prototype.buildBoard = function()
 
 TicTacToe.prototype.nextMove = function(square)
 {
-  // square=$('.cell');                                 // Take the html element 'square' & make it a jQuery element.
+
   if (square.text() === '')                          // if 'square' is empty....
   {
-    var position = square.attr('.data-position');    // Variable stores what data-position has been selected.
+    var position = square.attr('data-position');    // Variable stores what data-position has been selected.
     var value = this.board[position].value;         // Variable accesses Board[index] --> index.value: key (i.e. Board[0].value:1)
     //even - playerOne
     if(this.turn % 2 === 0)
