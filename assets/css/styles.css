@@ -1,14 +1,95 @@
-#Header{
-  background-color:blue;
-  color:white;
-  margin-bottom:0;
+html
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-#GameContainer{
-  height:521px;
-  width:100%;
-  background-color:grey;
-  padding:4em 2em 1em 2em;
+header
+{
+  display: block;
+  background-color: blue;
+  color: white;
+  margin-bottom: 0;
+}
+
+body
+{
+  line-height: 1;
+  background-color: lightgrey;
+}
+
+*
+{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.jumbotron
+{
+  width: 390px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 4px 4px 5px 0px rgb(159, 139, 88);
+}
+
+header h1
+{
+  font:  36px/40px arial;
+  padding: 10px;
+}
+
+.table-responsive
+{
+  text-align: center;
+}
+.msg-center
+{
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.end-message
+{
+  font-size: 26px;
+  color: green;
+}
+
+.play-again
+{
+  padding: 5px 10px;
+  width: 15em;
+  font-size: 26px;
+  border: 1px solid black;
+  color: white;
+  background-color: lightgreen;
+  box-shadow: 4px 4px 5px 0px rgb(159, 139, 88);
+  margin-bottom: 0.5em;
+  display: none;
+}
+
+.play-again:hover
+{
+  background-color: black;
+}
+
+.table
+{
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 4px 4px 5px 0px rgb(159, 139, 88);
+  background-color: rgb(57, 135, 191);
+}
+
+.winning-square
+{
+  background-color: rgb(96, 224, 27);
+  padding: 0;
 }
 
 td{
@@ -16,6 +97,12 @@ td{
   height:8em;
   text-align:center;
   vertical-align:middle;
+  padding: 0;
+}
+
+td:hover
+{
+  background-color: lightgreen;
 }
 
 td[data-position="1"], td[data-position="7"]{

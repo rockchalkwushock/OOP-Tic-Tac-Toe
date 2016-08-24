@@ -1,5 +1,5 @@
 # TicTacToe
-Responsive TicTacToe Game App. Ennovar Class Project
+OOP JS TicTacToe Game App.
 
 
 What I need to make this work:
@@ -32,16 +32,11 @@ What I need to make this work:
       c) must clear any arrays storing data.
       d) must prompt user to play.
 
-# Unresolved Issues (19AUG2016, CAB)
+# Unresolved Issues (24AUG2016, CAB)
 
-1) checkForWinner( ) is not complete.
-  - It is summing all selections not winning selections.
-  - Unless first 3 selection by X or O are a winning combination game is broken.
-  - Allows for more selections to be made after winner found.
-2) reset( ) not implementing properly.
-3) No form for inputing player's names.
-4) Refreshing page is the only way to clear board and start again.
-5) CSS still lacking in design.
-  - table boarders are not cooperating.
-  - table is responsive but widely varying across different viewports.
-    * need to implement media queries to fix this.
+1) When game has ended (draw or win) does not display 'Play Again' button.
+2) Instantly reloads board.
+3) No prompt to user if draw or win displays as it should.
+4) .winning-square is not obeying CSS when class is added to winner cells.
+- When I put break points in gameEnd( ) & highlightWinner( )
+- all the above work except .winning-square changing background-color.
